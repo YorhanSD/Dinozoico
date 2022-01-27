@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Editar informações do Dinossauro";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Editar informações do Dinossauro</h1>
+    <br />
+
+</div>
+
+<form>
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" placeholder="Digite o nome do Dinossauro">
+    </div>
+    <div class="form-group">
+        <label for="nome">Altura</label>
+        <input type="number" class="form-control" placeholder="Digite a altura do Dinossauro">
+    </div>
+    <div class="form-group">
+        <label for="nome">Peso</label>
+        <input type="number" class="form-control" placeholder="Digite o peso do Dinossauro">
+    </div>
+    <div class="text-center">
+        <select class="form-select btn-block" aria-label="Default select example">
+            <option selected>Selecione o tipo de alimentação</option>
+            <option value="1">Carnivoro</option>
+            <option value="2">Herbivoro</option>
+            <option value="3">Onivoro</option>
+        </select>
+    </div>
+    <br />
+    <div class="text-center">
+        <select class="form-select btn-block" aria-label="Default select example">
+            <option selected>Selecione a era em que viveu</option>
+            <option value="1">Catreacico</option>
+            <option value="2">Jurassico</option>
+            <option value="3">Triacico</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Alterar</button>
+    <a class="btn btn-secondary" asp-controller="Dinossauro" asp-action="Index" role="button">Voltar</a>
+</form>
+

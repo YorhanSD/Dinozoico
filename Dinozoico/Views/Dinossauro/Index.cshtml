@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Dinossauros";
+}
+
+
+<div class="text-center">
+
+    <h1 class="display-4">Lista de Dinossauros</h1>
+    <br />
+
+    <div class="">
+        <a class="btn btn-primary btn-block" role="button" asp-controller = "Dinossauro" asp-action = "Criar">Adicionar Novo Dinossauro</a>
+    </div>
+
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Altura</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Alimentação</th>
+                <th scope="col">Periodo</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Espinossauro</td>
+                <td>7 M</td>
+                <td>5 T</td>
+                <td>Carnívora</td>
+                <td>Cretáceo</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-success" asp-controller="Dinossauro" asp-action="Editar">Editar</a>
+                        <a role="button" class="btn btn-danger"asp-controller="Dinossauro" asp-action="DeletarConfirmacao">Deletar</a>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Estegossauro</td>
+                <td>3 - 4 M</td>
+                <td>2 - 6 T</td>
+                <td>Herbívora</td>
+                <td>Jurássico</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-success" asp-controller="Dinossauro" asp-action="Editar">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-controller="Dinossauro" asp-action="DeletarConfirmacao">Deletar</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Velociraptor</td>
+                <td>1,5 M</td>
+                <td>50 KG</td>
+                <td>Carnívora</td>
+                <td>Cretáceo</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-success" asp-controller="Dinossauro" asp-action="Editar">Editar</a>
+                        <a role="button" class="btn btn-danger"asp-controller="Dinossauro" asp-action="DeletarConfirmacao">Deletar</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+    
