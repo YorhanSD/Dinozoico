@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dinozoico.Models;
+using Dinozoico.Repositorio;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,15 @@ namespace Dinozoico.Controllers
 {
     public class DinossauroController : Controller
     {
+        private readonly IDinossauroRepositorio _dinossauroRepositorio;
+        public DinossauroController(IDinossauroRepositorio dinossauroRepositorio)
+        {
+            _dinossauroRepositorio = dinossauroRepositorio;
+        }
         public IActionResult Index()
         {
-            return View();
+            List<DinossauroModel> dinossauro = _dinossauroRepositorio.BuscarTodos();
+            return View(dinossauro);
         }
         public IActionResult Criar()
         {
@@ -25,6 +33,13 @@ namespace Dinozoico.Controllers
         public IActionResult DeletarConfirmacao()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Criar(DinossauroModel dinossauro)
+        {
+        _dinossauroRepositorio.Adicionar(dinossauro);
+        return RedirectToAction("Index");
         }
     }
 }
